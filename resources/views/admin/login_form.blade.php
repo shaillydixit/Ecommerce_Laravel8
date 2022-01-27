@@ -36,6 +36,22 @@
                                 </div>
                             </div>
                             <div class="rgstr-frm">
+                                @if(Session::has('success'))
+
+                                <div class="alert alert-success" role="alert">
+                                    {{session::get('success')}}
+                                </div>
+
+                                @endif
+
+                                @if(Session::has('error'))
+
+                                <div class="alert alert-danger" role="alert">
+                                    {{session::get('error')}}
+                                </div>
+
+                                @endif
+
                                 <div class="wdgt-titl wdgt-titl-icn">
                                     <i class="icon ion-ios-person-outline"></i>
                                     <h4>Login to Admin</h4>

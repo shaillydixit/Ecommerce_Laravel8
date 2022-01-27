@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::prefix('admin')->group(function(){
-    Route::get('/login/form',[ AdminController::class, 'Index'])->name('login.form');
+    Route::get('/login',[ AdminController::class, 'Index'])->name('login.form');
     Route::post('/login/owner', [AdminController::class, 'Login'])->name('admin.login');
     Route::get('/register/form', [AdminController::class, 'RegisterForm'])->name('register.form');
     Route::post('/register/create', [AdminController::class, 'RegisterCreate'])->name('register.create');
-    Route::get('/dashboard', [AdminController::class, 'AdminDashboard'])->name('dashboard.admin');
+    Route::get('/dashboard', [AdminController::class, 'AdminDashboard'])->name('dashboard.admin')->middleware('admin');
+    Route::get('/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 });
 
 
