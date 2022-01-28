@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +26,10 @@
     <link rel="alternate stylesheet" href="{{asset('backend/assets/css/colors/color7.css')}}" title="theme-color7">
     <link rel="alternate stylesheet" href="{{asset('backend/assets/css/colors/color8.css')}}" title="theme-color8">
     <link rel="alternate stylesheet" href="{{asset('backend/assets/css/colors/color9.css')}}" title="theme-color9">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
 </head>
+
 <body class="gray-bg">
     <main class="header-expand">
         @include('admin.body.customize')
@@ -54,5 +58,60 @@
     <script src="{{asset('backend/assets/js/calendar-int.js')}}"></script>
     <script src="{{asset('backend/assets/js/plugins.min.js')}}"></script>
     <script src="{{asset('backend/assets/js/custom-scripts.js')}}"></script>
-</body>	
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        @if(Session::has('message'));
+        var type = "{{Session::get('alert-type', 'info')}}"
+        switch (type) {
+            case 'info':
+                toastr.info("{{Session::get('message')}}");
+                break;
+
+            case 'success':
+                toastr.success("{{Session::get('message')}}");
+                break;
+
+            case 'error':
+                toastr.error("{{Session::get('message')}}");
+                break;
+
+            case 'warning':
+                toastr.warning("{{Session::get('message')}}");
+                break;
+        }
+        @endif
+
+    </script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(document).on('click', '#delete', function (e) {
+                e.preventDefault();
+                var link = $(this).attr("href");
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = link
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+            })
+        })
+
+    </script>
+</body>
+
 </html>

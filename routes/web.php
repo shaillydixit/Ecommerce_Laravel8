@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Backend\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,12 @@ Route::prefix('admin')->group(function(){
     Route::get('/dashboard', [AdminController::class, 'AdminDashboard'])->name('dashboard.admin')->middleware('admin');
     Route::get('/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 });
+
+Route::get('/category', [CategoryController::class, 'Index'])->name('category');
+Route::post('/category/add', [CategoryController::class, 'Create'])->name('category.add');
+Route::get('/category/edit/{id}', [CategoryController::class, 'Edit'])->name('category.edit');
+Route::post('/category/update/{id}', [CategoryController::class, 'Update'])->name('category.update');
+Route::get('/category/delete/{id}', [CategoryController::class, 'Delete'])->name('category.delete');
 
 
 Route::get('/', function () {
