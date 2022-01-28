@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Backend\CategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,11 @@ Route::get('/category/edit/{id}', [CategoryController::class, 'Edit'])->name('ca
 Route::post('/category/update/{id}', [CategoryController::class, 'Update'])->name('category.update');
 Route::get('/category/delete/{id}', [CategoryController::class, 'Delete'])->name('category.delete');
 
+Route::get('/subcategory', [SubcategoryController::class, 'Index'])->name('subcategory');
+Route::post('/subcategory/add', [SubcategoryController::class, 'Create'])->name('subcategory.add');
+Route::get('/subcategory/edit/{id}', [SubcategoryController::class, 'Edit'])->name('subcategory.edit');
+Route::post('/subcategory/update/{id}', [SubcategoryController::class, 'Update'])->name('subcategory.update');
+Route::get('/subcategory/delete/{id}', [SubcategoryController::class, 'Delete'])->name('subcategory.delete');
 
 Route::get('/', function () {
     return view('frontend.index');

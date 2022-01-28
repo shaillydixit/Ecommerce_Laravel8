@@ -15,13 +15,16 @@
             </div><!-- User Info -->
             <nav>
                 <ul>
-                    <li class="menu-item-has-children"><a href="#" title=""><i class="icon ion-android-home"></i><span>Category</span></a>
+                    <li class="menu-item-has-children"><a href="#" title=""><span>Category</span></a>
                         <ul class="children">
-                            <li><a href="{{route('category')}}" title="">Category Add</a></li>
-                            <li><a href="dashboard.html" title="">Category Edit</a></li>
+                            <li><a href="{{route('category')}}" title="">Category View</a></li>
                         </ul>
                     </li>
-
+                    <li class="menu-item-has-children"><a href="#" title=""><span>SubCategory</span></a>
+                        <ul class="children">
+                            <li><a href="{{route('subcategory')}}" title="">SubCategory View</a></li>
+                        </ul>
+                    </li>
                     
                 </ul>
             </nav><!-- Nav -->
