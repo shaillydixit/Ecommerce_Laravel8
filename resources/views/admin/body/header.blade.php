@@ -25,7 +25,11 @@
                             <li><a href="{{route('subcategory')}}" title="">SubCategory View</a></li>
                         </ul>
                     </li>
-                    
+                    <li class="menu-item-has-children"><a href="#" title=""><span>Brands</span></a>
+                        <ul class="children">
+                            <li><a href="{{route('brand')}}" title="">Brand View</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav><!-- Nav -->
         </header>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Backend\CategoryController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,12 @@ Route::post('/subcategory/add', [SubcategoryController::class, 'Create'])->name(
 Route::get('/subcategory/edit/{id}', [SubcategoryController::class, 'Edit'])->name('subcategory.edit');
 Route::post('/subcategory/update/{id}', [SubcategoryController::class, 'Update'])->name('subcategory.update');
 Route::get('/subcategory/delete/{id}', [SubcategoryController::class, 'Delete'])->name('subcategory.delete');
+
+Route::get('/brand', [BrandController::class, 'Index'])->name('brand');
+Route::post('/brand/add', [BrandController::class, 'Create'])->name('brand.add');
+Route::get('/brand/edit/{id}', [BrandController::class, 'Edit'])->name('brand.edit');
+Route::post('/brand/update/{id}', [BrandController::class, 'Update'])->name('brand.update');
+Route::get('/brand/delete/{id}', [BrandController::class, 'Delete'])->name('brand.delete');
 
 Route::get('/', function () {
     return view('frontend.index');
