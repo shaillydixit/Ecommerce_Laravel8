@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Backend\CategoryController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,11 @@ Route::post('/brand/add', [BrandController::class, 'Create'])->name('brand.add')
 Route::get('/brand/edit/{id}', [BrandController::class, 'Edit'])->name('brand.edit');
 Route::post('/brand/update/{id}', [BrandController::class, 'Update'])->name('brand.update');
 Route::get('/brand/delete/{id}', [BrandController::class, 'Delete'])->name('brand.delete');
+
+Route::prefix('product')->group(function(){
+
+    Route::get('/add', [ProductController::class, 'Add'])->name('add.product');
+});
 
 Route::get('/', function () {
     return view('frontend.index');

@@ -30,6 +30,11 @@
                             <li><a href="{{route('brand')}}" title="">Brand View</a></li>
                         </ul>
                     </li>
+                    <li class="menu-item-has-children"><a href="#" title=""><span>Products</span></a>
+                        <ul class="children">
+                            <li><a href="{{route('add.product')}}" title="">Add Product</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav><!-- Nav -->
         </header>

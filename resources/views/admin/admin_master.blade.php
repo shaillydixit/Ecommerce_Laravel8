@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('backend/assets/css/calendar-daygrid-main.min.css')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('backend/assets/css/editor.css')}}">
     <!-- Color Scheme -->
     <link rel="stylesheet" href="{{asset('backend/assets/css/colors/color.css')}}" title="theme-color1">
     <link rel="alternate stylesheet" href="{{asset('backend/assets/css/colors/color2.css')}}" title="theme-color2">
@@ -27,7 +28,6 @@
     <link rel="alternate stylesheet" href="{{asset('backend/assets/css/colors/color8.css')}}" title="theme-color8">
     <link rel="alternate stylesheet" href="{{asset('backend/assets/css/colors/color9.css')}}" title="theme-color9">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-
 </head>
 
 <body class="gray-bg">
@@ -58,6 +58,7 @@
     <script src="{{asset('backend/assets/js/calendar-int.js')}}"></script>
     <script src="{{asset('backend/assets/js/plugins.min.js')}}"></script>
     <script src="{{asset('backend/assets/js/custom-scripts.js')}}"></script>
+    <script src="{{asset('backend/assets/js/editor.js')}}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
         @if(Session::has('message'));
